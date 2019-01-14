@@ -1,0 +1,9 @@
+*.pyc
+__pycache__
+*.png
+music/static/sound/
+*.sqlite3
+venv/
+.idea/
+music/migrations/
+users/migrations/

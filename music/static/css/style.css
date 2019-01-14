@@ -1,0 +1,132 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+ body{
+ 	background-color: #4B4545;
+ }
+
+.wrapper{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+		
+}
+
+.header{
+	
+}
+
+.logo{
+	background: #000;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+
+.content{
+	min-height: 300px;
+}
+
+.footer{
+	display: flex;
+	justify-content: flex-end;
+	height: 70px;
+	width: 100%;
+	background: black;
+}
+
+
+.footer a{
+	display: block;		
+	text-decoration: none;
+	color: white ;
+	text-align: center;
+	padding: 14px 16px;
+	font-size: 19px;
+	height: 30px;
+}
+
+.footer a:hover{
+	border-bottom: 2px solid;
+}
+
+
+.topnav{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.topnav a{
+	text-decoration: none;
+	color: white ;
+	text-align: center;
+	padding: 14px 16px;
+	font-size: 19px;
+	height: 30px;
+}
+
+.topnav a:hover{
+	border-bottom: 2px solid;
+}
+
+
+.plus_pl{
+	margin: 10px;
+	padding-left: 30px;
+	border: 3px solid #fff;
+	padding-bottom: 10px;
+	padding-bottom: 10px;
+}
+
+.plus_pl a{
+	text-decoration: none;
+	color: white ;
+	text-align: center;
+	padding: 14px 16px;
+	font-size: 19px;
+	height: 30px;
+}
+
+.plus_pl a:hover{
+	color: #000;
+}
+
+/* m_album temlplate */
+
+.album_table{
+	margin: 30px 30px 0 30px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+}
+
+.album_table a{
+	padding: 5px;
+	margin-bottom:-5px;
+}/* Отступы между флекс элементами */ 													
+
+
+/* form login! */
+.login{
+	align-items: center;
+}
+
+
+	
+.div_login{
+	height: 100%;
+	width: 100%;
+}
+
+#form_login label{
+
+}
+
+#form_login input{
+
+}

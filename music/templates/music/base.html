@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/player.css' %}" rel="stylesheet" type="text/css">
+    <script  src="{% static 'js/jquery-3.3.1.js' %}"></script>
+    <script  src="{% static 'js/player.js' %}"></script>
+    <script  src="{% static 'js/profile.js' %}"></script>
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet"> 
+        
+
+    {% block table_css_album %}
+    {% endblock %}
+</head>
+<body>
+    <div class = 'wrapper'>
+
+        <div class = 'header'>
+
+            <div class="logo">
+                <a href = '{% url "music:index" %}'><img class="graficlogo" src="{% static 'images/logo.jpg' %}" alt=""></a>
+            </div>
+
+        </div>
+        
+        <div class="topnav">
+            <a href = '{% url "music:m_albums" %}'>Студийные альбомы</a>
+            <a href = ''>Сборники</a>
+            <a href = ''>Мини-альбомы</a>
+            <a href = ''>Синглы</a>
+            <a href = ''>Концертные альбомы</a>
+        </div>
+
+
+        <div class="content">
+            {% block content%}
+            {% endblock %}
+        </div>
+        
+        <div class="footer">
+                {% if user.is_authenticated %}
+                    <a href='{% url "music:user_account" %}'>Hello, {{user.username}}</a>
+                    <a href = '{% url "users:logout_view" %}'>Выйти</a>
+                {% else %}
+                    <a href = '{% url "users:login_view" %}' >Log_in</a>
+                    <a href = '{% url "users:register_view" %}'>Register</a>
+                {% endif %}
+        </div>
+
+    </div>
+   
+</body>
+</html>

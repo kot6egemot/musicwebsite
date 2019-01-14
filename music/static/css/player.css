@@ -1,0 +1,239 @@
+
+.player{
+    display: flex;        /* Определяет flex-контейнер */
+    flex-direction: column;/* устанавливаем основную ось(вертикально) */
+    justify-content: space-around;
+
+    padding: 5px;
+    width: 330px;
+    height: 440px;
+    background-image: url('gen-fon.png');
+    border-radius: 10px;
+}
+.control{
+    max-height: 145px;
+    background-image: url('fon.png');
+    border-radius: 7px 7px 0 0;
+    box-shadow: inset 0px 0px 1px 1px #444444;
+}
+
+
+.tracklist{
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    min-height: 290px;
+    overflow: auto; 
+    margin-top: -5px;
+    background-image: url('tracklist-fon.png');
+    border-radius: 0 0 7px 7px;
+}
+
+
+
+.player_title{
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+}
+
+.name_album{
+    font-size: 30px;
+    width: 300px;
+    font-family: 'Encode Sans Condensed', sans-serif;
+    text-align: center;
+    color: white;
+}
+
+.name_song{
+    margin-top: -10px;
+    font-size: 24px;
+    width: 300px;
+    font-family: 'Abel', sans-serif;
+    text-align: center;
+    color: white;
+}
+
+.player_button_control{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 30px;
+    margin-top: 12px;
+
+}
+
+.time_song{
+    padding: 0 10px 10px 10px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: white;
+}
+
+.div_timeline{
+    margin-top: -10px;
+    z-index: 5;
+}
+
+.div_timeline input:focus{
+    outline: none;
+}
+
+.div_timeline input{
+    -webkit-appearance: none;
+    color: #4d9993;
+    width:330px;
+    height:5px;
+
+}
+.div_timeline input::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width:18px;
+    height:18px;
+    background:#4d9993;
+    border-radius:16px;
+    cursor:pointer;
+    transition:.1s;
+}
+
+.div_timeline input::-moz-range-track{
+    color: #4d9993;
+    width:330px;
+    height:5px;
+}
+
+.div_timeline input::-moz-range-thumb{
+    width:18px;
+    height:18px;
+    background:#4d9993;
+    border-radius:16px;
+    cursor:pointer;
+    transition:.1s;
+}
+
+.button_mut{
+    width: 34px;
+    height: 34px;
+    background-image:url('unmuteActive.png');
+}
+
+ .back{
+    width: 29px;
+    height: 29px;
+    background-image:url('butLeftNoFocus.png');
+}
+.back:hover{
+    background-image:url('ButLeftFocus.png');
+}
+
+.button{
+    width: 52px;
+    height: 52px;
+    background-image:url('butPlay.png');
+}
+
+.next{
+    width: 29px;
+    height: 29px;
+    background-image:url('butRightNoFocus.png');
+}
+.next:hover{
+    background-image:url('ButRightFocus.png');
+}
+
+.but_Playlist{
+    width: 34px;    
+    height: 34px;   
+    background-image:url('PlaylistNoFocus.png');
+}
+
+.but_Playlist:hover{
+    width: 34px;    
+    height: 34px;   
+    background-image:url('PlaylistFocus.png');
+}
+
+
+.track{    
+    width: 320px; 
+}
+
+.track_rows:hover{
+    background:#605c66;
+}
+
+.track_rows{
+    padding: 0 5px 0 5px;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 55px;
+    color: white;
+    font-family: 'Abel', sans-serif;
+
+    border-style: solid;
+    border-width: 1px 0 0 0;
+    border-color:#625e68;
+}
+
+.count{
+}
+
+.tracklist::-webkit-scrollbar{
+    width: 8px;
+    height: 100px;
+}
+
+.tracklist::-webkit-scrollbar-track {
+    background: #595560;
+}
+
+.tracklist::-webkit-scrollbar-thumb {
+    background: #38353d;
+}
+
+.tracklist {
+  overflow-y: scroll;
+  scrollbar-color: #38353d #595560;
+  scrollbar-width: thin;
+}
+
+.count, .name_song, .time, .add_track {
+        /**
+         * Для эксплорера
+         */
+        -ms-user-select: none;
+
+        /**
+         * Для мозилы
+         */
+        -moz-user-select: none;
+
+        /**
+         * Для конкверора
+         */
+        -khtml-user-select: none;
+
+        /**
+         * Для Сафари и Хрома
+         */
+        -webkit-user-select: none;
+}
+
+.artist-name{
+    flex: 70%;
+}
+.count, .add_track, .time{
+    flex: 10%;
+}
+.time{
+    text-align: center;
+}
+
+.go_on{
+    background-image: url('butPause.png');
+}

@@ -1,0 +1,110 @@
+{% extends 'music/base.html' %}
+
+{% block content %}
+    <div class="plus_pl">
+        <a id = 'create_playlist' href="#">Добавить плейлист</a>
+        <a id = 'user_plalist' href="#">Мои плейлисты</a>
+
+        <ul class = 'ul_user_pl'>
+            {% for pl in user_playlist %}
+                <li>
+                    <a href='?pl={{pl}}'>{{pl}}</a>
+                    <div class="button_del_pl" pl ={{pl.id}} 
+                    style = "background: red;
+                            width: 24px;
+                            height: 24px;
+                            padding: 5px "></div>
+                </li>
+            {% endfor %}
+        </ul>
+
+    </div> 
+
+
+    <div class="div_select_playlist">
+        <select name="" id = "select_select_playlist">
+            {% for pl in user_playlist%}
+                <option value="{{pl.id}}">{{pl}}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="create_playlist">
+        <form class ='form_create_playlist' action="" method="post">
+            {% csrf_token %}
+            {{form}}
+        </form>
+    </div>
+    <button id="button_create_pl">Добавить</button>
+
+<div class="player">
+    <div class="control">
+        <audio id="my-player" loop ></audio>
+
+        <div class = "player_title">
+            <div class="name_album">Meteora</div>
+            <div class="name_song">From the inside</div>
+        </div>
+
+        <div class="player_button_control">
+            <div class="button_mut"></div>  
+            <div class="back"></div>
+            <div class="button" data-src = ""></div>
+            <div class="next"></div>
+            <div class="but_Playlist"></div>
+        </div>
+
+        <div class="time_song">
+            <div class="realtime">0:00</div>
+            <div class="long">0:00</div>
+        </div>
+
+    </div>
+
+    <div class="input">
+        <input id="timeline" type="range" min="0" max=""/>
+    </div>
+
+    <div class="tracklist"> 
+
+    <div class="track">
+        {% for song in songs_pl %}
+        <div class="track_rows">
+            <div class="count">1</div>
+            <div class='artis-name'>
+                <div class="artist">Linkinpark</div>
+                <div class="name_track" data-src = "\static{{song.track}}">{{song.title}}</div>
+            </div>
+            <div class="time">1</div>
+            <div class="del_track" id_track = '{{song.id}}'>Del_track</div>
+        </div>  
+        {% endfor %}
+    </div>         
+    </div>
+</div>
+
+
+
+    <div class="form_del_track"  active_pl = {{active_pl.title}}>
+        <form class="del" action="del_song" method="post">
+            {% csrf_token %}    
+            {{form_del_song}}
+        <button name="submit">Удалить песню</button>
+        </form>
+    </div>
+
+    <div class="form_del_pl">
+        <form class="del_pl" action="del_pl" method="post">
+            {% csrf_token %}
+            {{form_del_pl}}
+        <button name="submit">Удалить плейлист</button>
+        </form>
+    </div>
+
+
+{% endblock %}
+
+
+
+
+
