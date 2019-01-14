@@ -167,14 +167,13 @@
 
 .track_rows{
     padding: 0 5px 0 5px;
-    margin: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+
     height: 55px;
     color: white;
     font-family: 'Abel', sans-serif;
-
     border-style: solid;
     border-width: 1px 0 0 0;
     border-color:#625e68;
@@ -225,14 +224,9 @@
 }
 
 .artist-name{
-    flex: 70%;
+    width: 190px;
 }
-.count, .add_track, .time{
-    flex: 10%;
-}
-.time{
-    text-align: center;
-}
+
 
 .go_on{
     background-image: url('butPause.png');
