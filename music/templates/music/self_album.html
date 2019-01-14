@@ -35,15 +35,15 @@
     <div class="tracklist"> 
 
     <div class="track">
-        {% for path in tracks %}
+        {% for track in tracks %}
         <div class="track_rows">
             <div class="count">1</div>
             <div class='artis-name'>
                 <div class="artist">Linkinpark</div>
-                <div class="name_track" data-src = "{% static path.track %}">{{path.title}}</div>
+                <div class="name_track" data-src = "{% static track.track %}">{{track.title}}</div>
             </div>
             <div class="time">1</div>
-            <div class="add_track" id_track = '{{path.id}}'>Add track</div>
+            <div class="add_track" id_track = '{{track.id}}'>Add track</div>
         </div>  
         {% endfor %}
     </div>         

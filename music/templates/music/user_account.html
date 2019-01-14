@@ -17,7 +17,6 @@
                 </li>
             {% endfor %}
         </ul>
-
     </div> 
 
 
@@ -34,8 +33,9 @@
             {% csrf_token %}
             {{form}}
         </form>
+        <button id="button_create_pl">Добавить</button>
     </div>
-    <button id="button_create_pl">Добавить</button>
+    
 
 <div class="player">
     <div class="control">
@@ -53,7 +53,7 @@
             <div class="next"></div>
             <div class="but_Playlist"></div>
         </div>
-
+        
         <div class="time_song">
             <div class="realtime">0:00</div>
             <div class="long">0:00</div>
@@ -61,25 +61,24 @@
 
     </div>
 
-    <div class="input">
+    <div class="div_timeline">
         <input id="timeline" type="range" min="0" max=""/>
     </div>
 
     <div class="tracklist"> 
-
-    <div class="track">
-        {% for song in songs_pl %}
-        <div class="track_rows">
-            <div class="count">1</div>
-            <div class='artis-name'>
-                <div class="artist">Linkinpark</div>
-                <div class="name_track" data-src = "\static{{song.track}}">{{song.title}}</div>
+        <div class="track">
+            {% for song in songs_pl %}
+            <div class="track_rows">
+                <div class="count">1</div>
+                <div class='artis-name'>
+                    <div class="artist">Linkinpark</div>
+                    <div class="name_track" data-src = "\static{{song.track}}">{{song.title}}</div>
+                </div>
+                <div class="time">1</div>
+                <div class="del_track" id_track = '{{song.id}}'>Del_track</div>
             </div>
-            <div class="time">1</div>
-            <div class="del_track" id_track = '{{song.id}}'>Del_track</div>
-        </div>  
-        {% endfor %}
-    </div>         
+            {% endfor %}  
+    </div> 
     </div>
 </div>
 
