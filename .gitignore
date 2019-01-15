@@ -7,3 +7,4 @@ venv/
 .idea/
 music/migrations/
 users/migrations/
+music/media
