@@ -1,4 +1,10 @@
 $(document).ready(function() {
+    
+function get_and_set_name_song(){
+    var name_song = $('.on').text();
+    $('.name_song').text(name_song)
+}//Вставляем на титульный лист имя песни
+
 //следующий трек - предыдущий трек
 function next(){
     var a = $('.tracklist').find('.name_track');
@@ -36,6 +42,7 @@ function timeformat(input_int){
     var pl = $('#my-player').get(0); //плеер
 
     $('.name_track').on("click", function(event) {
+
         //Все управление плеером производится по нажатию на блок с классом name_track
         //кнопки которые затрагивают паузу и стоп ссылаются на этот блок
         //содержащиеся в атрибутах блока данные передаются в плеер
@@ -65,7 +72,8 @@ function timeformat(input_int){
             $('.button').addClass('go_on');
 
             pl.src = $(this).attr('data-src');
-            pl.play();      
+            pl.play();    
+            get_and_set_name_song();  
         }
     });
 
