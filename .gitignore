@@ -8,3 +8,4 @@ venv/
 music/migrations/
 users/migrations/
 media/
+music/fixtures/

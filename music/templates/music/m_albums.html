@@ -6,7 +6,7 @@
 <div class = "albums">
 	<div class="album_table">
 		{%for alb in album%}
-			<a href = '{{alb.title}}'><img src = "{% static alb.path_cover %}" alt = "{{alb.title}}"></a>
+			<a href = '{{alb.title}}'><img src = "/{{alb.path_cover}}" alt = "{{alb.title}}"></a>
 	    {%endfor%}
 	</div>	    
 </div>

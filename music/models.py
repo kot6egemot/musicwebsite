@@ -15,7 +15,6 @@ class Album(models.Model):
     def __str__(self):
         return  self.title
 class List_track(models.Model):
-
     album = models.ForeignKey(Album, on_delete=True)
     title = models.CharField(max_length=50, blank=True)
     path = models.CharField(max_length=50, blank = True)

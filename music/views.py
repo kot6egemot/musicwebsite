@@ -24,6 +24,7 @@ def self_album(request, album_title):
     Рисуем форму для обработки добавления песни в пользовательский плейлист
     Испраивать дубликаты записей в базе данных
     """
+
     all_user_pl = Playlist.objects.all()
     album = Album.objects.get(title = album_title)
     #получить все записи через вшений ключ model.name_model _set .all()
@@ -46,7 +47,8 @@ def self_album(request, album_title):
     context = {'album': album,
                'tracks':tracks,
                'form':form,
-               'all_user_pl':all_user_pl}
+               'all_user_pl':all_user_pl,
+               }
     return render(request, 'music/self_album.html', context)
 
 def user_account(request):

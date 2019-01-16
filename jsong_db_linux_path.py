@@ -65,7 +65,7 @@ for artist in ARTIST:
 										    "fields": {
 												      "album": pk_album,
 												      "title": os.path.split(path_song)[-1],
-												      "track": path_song
+												      "path": path_song
 												    }
 											}
 										)									
