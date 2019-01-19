@@ -63,6 +63,7 @@ for artist in ARTIST:
 										    "model": "music.list_track",
 										    "pk": pk_song,
 										    "fields": {
+										    		  "artist": pk_artist,
 												      "album": pk_album,
 												      "title": os.path.split(path_song)[-1],
 												      "path": path_song

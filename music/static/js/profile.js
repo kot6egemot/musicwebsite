@@ -7,12 +7,16 @@ $(document).ready(function() {
     $('.add_track').click(function(event){
 
         var select = $('#select_add_song')
+
         if($(this).children(select).length == 0){
             select.show().appendTo($(this));
         };
+
         select.show();
-        //Заполнения имя песни в форму
-        var data_id_track = $(this).attr('id_track');
+        //Заполнения имя песни
+
+        var data_id_track = $(this).attr('id_track')
+
         $('#id_id_track_model').val(data_id_track);
     });
 
@@ -30,7 +34,7 @@ $(document).ready(function() {
 
 ////////////////////////////////////////////////////////////////////
 
-    //скрытие элемента по клику в не области кнопки доабвить_песню
+    //скрытие элемента по клику в не области кнопки добавить_песню
     $(document).click(function(event) {
         if ($(event.target).closest(".add_track").length) return;
         $("select").hide("slow");
@@ -68,6 +72,14 @@ $(document).ready(function() {
             //Продумать действия после удаления песни
             //Поразмышлять об собтиях в очереди 
         })
+    });
+
+
+
+    $('.butPlaylist').click(function(){
+            
+
+
     });
 
 });

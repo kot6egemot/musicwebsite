@@ -7,12 +7,12 @@
     padding: 5px;
     width: 330px;
     height: 440px;
-    background-image: url('gen-fon.png');
+    background-image: url('images/gen-fon.png');
     border-radius: 10px;
 }
 .control{
     max-height: 145px;
-    background-image: url('fon.png');
+    background-image: url('images/fon.png');
     border-radius: 7px 7px 0 0;
     box-shadow: inset 0px 0px 1px 1px #444444;
 }
@@ -25,7 +25,7 @@
     min-height: 290px;
     overflow: auto; 
     margin-top: -5px;
-    background-image: url('tracklist-fon.png');
+    background-image: url('images/tracklist-fon.png');
     border-radius: 0 0 7px 7px;
 }
 
@@ -117,43 +117,42 @@
 .button_mut{
     width: 34px;
     height: 34px;
-    background-image:url('unmuteActive.png');
+    background-image:url('images/bunmuteActive.png');
 }
 
  .back{
     width: 29px;
     height: 29px;
-    background-image:url('butLeftNoFocus.png');
+    background-image:url('images/butLeftNoFocus.png');
 }
 .back:hover{
-    background-image:url('ButLeftFocus.png');
+    background-image:url('images/ButLeftFocus.png');
 }
 
 .button{
     width: 52px;
     height: 52px;
-    background-image:url('butPlay.png');
+    background-image:url('images/butPlay.png');
 }
 
 .next{
     width: 29px;
     height: 29px;
-    background-image:url('butRightNoFocus.png');
+    background-image:url('images/butRightNoFocus.png');
 }
 .next:hover{
-    background-image:url('ButRightFocus.png');
+    background-image:url('images/ButRightFocus.png');
 }
 
 .but_Playlist{
     width: 34px;    
     height: 34px;   
-    background-image:url('PlaylistNoFocus.png');
+    background-image:url('images/PlaylistNoFocus.png');
 }
-
 .but_Playlist:hover{
     width: 34px;    
     height: 34px;   
-    background-image:url('PlaylistFocus.png');
+    background-image:url('images/PlaylistFocus.png');
 }
 
 
@@ -241,5 +240,5 @@
 }
 
 .go_on{
-    background-image: url('butPause.png');
+    background-image: url('images/butPause.png');
 }

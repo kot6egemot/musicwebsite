@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
-from .models import Album, List_track, Playlist
+from .models import Album, List_track, Playlist, Artist
 from .forms import Form_create_playlist, Form_add_song, Form_del_song, Form_del_pl
 
 """
@@ -24,7 +24,7 @@ def self_album(request, album_title):
     Рисуем форму для обработки добавления песни в пользовательский плейлист
     Испраивать дубликаты записей в базе данных
     """
-
+    artist = Artist.objects.all()
     all_user_pl = Playlist.objects.all()
     album = Album.objects.get(title = album_title)
     #получить все записи через вшений ключ model.name_model _set .all()
@@ -48,7 +48,7 @@ def self_album(request, album_title):
                'tracks':tracks,
                'form':form,
                'all_user_pl':all_user_pl,
-               }
+               'artist':artist}
     return render(request, 'music/self_album.html', context)
 
 def user_account(request):

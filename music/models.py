@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 
 class Artist(models.Model):
     title = models.CharField(max_length=20)
+    def __str__(self):
+        return  self.title
 
 class Album(models.Model):
     title = models.CharField(max_length=50)
@@ -15,6 +17,7 @@ class Album(models.Model):
     def __str__(self):
         return  self.title
 class List_track(models.Model):
+    artist = models.ForeignKey(Artist, on_delete = True)
     album = models.ForeignKey(Album, on_delete=True)
     title = models.CharField(max_length=50, blank=True)
     path = models.CharField(max_length=50, blank = True)

@@ -1,9 +1,16 @@
 $(document).ready(function() {
-    
+
+
+$('.name_song').text($('.name_track:first').text())
+$('.name_album').text($('.name_track:first').attr('artist'))
+
+
 function get_and_set_name_song(){
     var name_song = $('.on').text();
-    $('.name_song').text(name_song)
-}//Вставляем на титульный лист имя песни
+    var name_artist = $('.on').attr('artist');
+    $('.name_song').text(name_song);
+    $('.name_album').text(name_artist);
+}//при запуске плеера, ставляем данные в шапку плеера
 
 //следующий трек - предыдущий трек
 function next(){
@@ -159,6 +166,8 @@ function timeformat(input_int){
 
     });
 
-    
+    //Выпадающие меню иконки плейлиста для добавления\удаления\переключения плейлиста
+
+
 
 });

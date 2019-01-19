@@ -11,12 +11,12 @@
                     <a href='?pl={{pl}}'>{{pl}}</a>
                     <div class="button_del_pl" pl ={{pl.id}} 
                     style = "background: red;
-                            width: 24px;
-                            height: 24px;
-                            padding: 5px "></div>
+                            width: 20px;
+                            height: 20px;"></div>
                 </li>
             {% endfor %}
         </ul>
+
     </div> 
 
 
@@ -42,8 +42,8 @@
         <audio id="my-player" loop ></audio>
 
         <div class = "player_title">
-            <div class="name_album">Meteora</div>
-            <div class="name_song">From the inside</div>
+            <div class="name_album">/---------------/</div>
+            <div class="name_song">/------/</div>
         </div>
 
         <div class="player_button_control">
@@ -51,7 +51,9 @@
             <div class="back"></div>
             <div class="button" data-src = ""></div>
             <div class="next"></div>
-            <div class="but_Playlist"></div>
+            <div class="but_Playlist">
+
+            </div>
         </div>
         
         <div class="time_song">
@@ -72,7 +74,7 @@
                 <div class="count">1</div>
                 <div class='artis-name'>
                     <div class="artist">Linkinpark</div>
-                    <div class="name_track" data-src = "\{{song.path}}">{{song.title}}</div>
+                    <div class="name_track" data-src = "\{{song.path}}", artist='{{song.artist}}'>{{song.title}}</div>
                 </div>
                 <div class="time">1</div>
                 <div class="del_track" id_track = '{{song.id}}'>Del_track</div>
@@ -84,6 +86,7 @@
 
 
 
+
     <div class="form_del_track"  active_pl = {{active_pl.title}}>
         <form class="del" action="del_song" method="post">
             {% csrf_token %}    
@@ -92,6 +95,8 @@
         </form>
     </div>
 
+
+
     <div class="form_del_pl">
         <form class="del_pl" action="del_pl" method="post">
             {% csrf_token %}
@@ -99,7 +104,6 @@
         <button name="submit">Удалить плейлист</button>
         </form>
     </div>
-
 
 {% endblock %}
 

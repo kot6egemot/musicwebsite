@@ -56,7 +56,7 @@
 
 .topnav{
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 	flex-wrap: wrap;
 }
 
@@ -70,7 +70,8 @@
 }
 
 .topnav a:hover{
-	border-bottom: 2px solid;
+	background: white;
+	color: black;
 }
 
 
@@ -130,3 +131,4 @@
 #form_login input{
 
 }
+/* Выпадающие меню иконки плейлиста для добавления\удаления\переключения плейлиста */
