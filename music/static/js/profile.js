@@ -4,19 +4,14 @@ $(document).ready(function() {
 ///////ЗАПОЛНЕНИЕ И ОТПРАВКА ФОРМЫ ВНЕСЕНИЯ ПЕСНИ В СПИСОК ПЕСЕН\\\\\\\\\
     $('select').hide();
 
-    $('.add_track').click(function(event){
-
+    $('.add_track').click(function(event){  
         var select = $('#select_add_song')
-
         if($(this).children(select).length == 0){
             select.show().appendTo($(this));
         };
-
         select.show();
         //Заполнения имя песни
-
         var data_id_track = $(this).attr('id_track')
-
         $('#id_id_track_model').val(data_id_track);
     });
 

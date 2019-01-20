@@ -4,7 +4,7 @@ class Form_create_playlist(forms.ModelForm):
 	class Meta:
 		model = Playlist
 		fields = ['title']
-		labels = {'text':'Введи название плейлиста'}
+		labels = {'title':'Введи название плейлиста'}
 
 class Form_add_song(forms.ModelForm):
 	id_track_model = forms.CharField(max_length=20)

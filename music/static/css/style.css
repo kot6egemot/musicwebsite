@@ -132,3 +132,25 @@
 
 }
 /* Выпадающие меню иконки плейлиста для добавления\удаления\переключения плейлиста */
+/*Форма добавения песни*/
+#AddPlaylist{
+	position: absolute;
+	display: none;
+}
+
+.form_del_track{
+	position: absolute;
+	display: none;
+}
+
+.form_del_pl{
+	position: absolute;
+	display: none;
+}
+
+.create_playlist{
+/* 	display: none; */
+	padding-left: 50px;
+	position: absolute;
+}
+/* */

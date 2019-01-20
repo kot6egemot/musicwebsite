@@ -1,0 +1,89 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+.button_del_pl{
+	width: 18px;
+	height: 18px;
+	background: red;
+	border-top: 1px solid;
+	border-right: 1px solid;
+	border-bottom: 1px solid;
+	padding: 2px;
+}
+
+
+.job_menu{
+	position: absolute;
+	font-size: 15px;
+}
+
+
+.job_menu ul{
+	list-style: none;
+}
+
+
+.top_menu, .sub_menu{
+	position: absolute;
+}
+
+
+/* Делаем границу */
+
+.top_menu >	 li{
+	border-left: 1px solid;
+	border-bottom: 1px solid;
+	padding: 2px;
+}
+
+.top_menu:first-child{
+	border-top: 1px solid;
+	border-right: 1px solid;
+}
+
+.sub_menu > li{
+	padding: 2px;
+	border-left: 1px solid;
+	border-bottom: 1px solid;
+	border-right: 1px solid;
+}
+.sub_menu:first-child{
+	border-top: 1px solid;
+}
+/*                 ////////////////////////    */
+
+.sub_menu{
+	display: none;
+	left: 100%;
+	top: 50%;
+	margin-top: -1px;
+}
+
+.sub_menu > li{
+	position: relative;
+}
+
+.sub_menu_two{
+	display: none;
+	position: absolute;
+	top: -1px;
+	left: 100%;
+}
+
+
+.sub_menu_two li{
+	position: relative;
+}
+
+
+.top_menu > li:nth-child(2):hover .sub_menu{
+	display: block;
+}
+
+
+.sub_menu > li:hover .sub_menu_two{
+	display: block;
+}
