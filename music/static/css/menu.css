@@ -5,38 +5,52 @@
 
 
 .button_del_pl{
-	width: 18px;
-	height: 18px;
+	width: 25px;
+	height: 25px;
 	background: red;
 	border-top: 1px solid;
 	border-right: 1px solid;
 	border-bottom: 1px solid;
 	padding: 2px;
 }
-
-
 .job_menu{
 	position: absolute;
-	font-size: 15px;
+	font-size: 14px;
+	font-family: 'Abel', sans-serif;
+	color: #1B45C1;
+	z-index: 99;
+	display: none;
 }
-
 
 .job_menu ul{
 	list-style: none;
+	background: #BFE3E9;
 }
 
+.top_menu{
+	opacity: 0.9;
+}
 
 .top_menu, .sub_menu{
 	position: absolute;
 }
 
-
+.sub_menu a{
+	text-decoration: none;
+	color: #1B45C1;
+	display: block;
+	padding: 5px;
+}
 /* Делаем границу */
 
 .top_menu >	 li{
 	border-left: 1px solid;
 	border-bottom: 1px solid;
-	padding: 2px;
+	padding: 5px;
+}
+
+.top_menu >	 li:hover{
+	background: #F4B563;
 }
 
 .top_menu:first-child{
@@ -45,11 +59,16 @@
 }
 
 .sub_menu > li{
-	padding: 2px;
+	display: block;
 	border-left: 1px solid;
 	border-bottom: 1px solid;
 	border-right: 1px solid;
 }
+
+.sub_menu > li:hover{
+	background: #F4B563;
+}
+
 .sub_menu:first-child{
 	border-top: 1px solid;
 }
@@ -73,17 +92,23 @@
 	left: 100%;
 }
 
-
 .sub_menu_two li{
 	position: relative;
 }
-
 
 .top_menu > li:nth-child(2):hover .sub_menu{
 	display: block;
 }
 
-
 .sub_menu > li:hover .sub_menu_two{
 	display: block;
+}
+
+.form_create_playlist{
+	float: left;
+	padding: 10px;
+}
+
+.form_create_playlist > input{
+	width: 118px;
 }

@@ -34,19 +34,20 @@
 
     <div class="tracklist"> 
 
-    <div class="track">
-        {% for track in tracks %}
-        <div class="track_rows">
-            <div class="count">1</div>
-            <div class='artist-name'>
-                <div class="artist">Linkinpark</div>
-                <div class="name_track" data-src = "/{{track.path}}", aritst='track.artist'>{{track.title}}</div>
-            </div>
-            <div class="time">1</div>
-            <div class="add_track" id_track = '{{track.id}}'>Add track</div>
-        </div>  
-        {% endfor %}
-    </div>         
+        <div class="track">
+            {% for track in tracks %}
+            <div class="track_rows">
+                <div class="count">1</div>
+                <div class='artist-name'>
+                    <div class="artist">Linkinpark</div>
+                    <div class="name_track" data-src = "/{{track.path}}", aritst='track.artist'>{{track.title}}</div>
+                </div>
+                <div class="time">1</div>
+                <div class="add_track" id_track = '{{track.id}}'>AT</div>
+            </div>  
+            {% endfor %}
+        </div> 
+                
     </div>
 </div>
 

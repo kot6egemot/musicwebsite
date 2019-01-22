@@ -1,14 +1,13 @@
 $(document).ready(function() {
 
-
 ///////ЗАПОЛНЕНИЕ И ОТПРАВКА ФОРМЫ ВНЕСЕНИЯ ПЕСНИ В СПИСОК ПЕСЕН\\\\\\\\\
-    $('select').hide();
 
     $('.add_track').click(function(event){  
-        var select = $('#select_add_song')
+        var select = $('.select_select')
         if($(this).children(select).length == 0){
             select.show().appendTo($(this));
         };
+
         select.show();
         //Заполнения имя песни
         var data_id_track = $(this).attr('id_track')
@@ -23,7 +22,7 @@ $(document).ready(function() {
         $('#id_title').val($(this).val());
         var formData = $('form').serialize();
         $.post('', formData, function(){
-            $('select').hide();
+            $('.select_select').hide('slow');
         }); 
     });
 
@@ -32,8 +31,9 @@ $(document).ready(function() {
     //скрытие элемента по клику в не области кнопки добавить_песню
     $(document).click(function(event) {
         if ($(event.target).closest(".add_track").length) return;
-        $("select").hide("slow");
+        $(".select_select").hide("slow");
             event.stopPropagation();
+
     });
 
   //УДАЛЯЕМ ПЕСНЮ ИЗ СПИСКА\\\\\\\\\\\\\\\\\\\\
@@ -54,28 +54,38 @@ $(document).ready(function() {
 
     $('#button_create_pl').click(function(){
         var form_create_data = $('.form_create_playlist').serialize();
-        $.post('', form_create_data, function(data, status){
-            //Включать новый плейлист в список
-        }); 
+
+        var n_pl = $('.form_create_playlist #id_title').val();
+        if(n_pl){
+            $.post('', form_create_data, function(data, status){
+                //Включать новый плейлист в список
+                $('.create_playlist').hide();
+                if(status == 'success'){
+                    var elem_li = ('<li>n_pl<li>').appendTo('.sub_menu');
+                }
+            }); 
+        };
     });
 
     $('.button_del_pl').click(function(){
         $('.del_pl #id_title').val($(this).attr('pl'));
         data_del_pl = $('.del_pl').serialize();
 
-        $.post('del_pl',data_del_pl, function(data){
-            //Продумать действия после удаления песни
-            //Поразмышлять об собтиях в очереди 
+        $.post('del_pl',data_del_pl, function(data, status){
+             if(status=='success'){
+
+             };
         })
     });
 
 
 
-    $('.butPlaylist').click(function(){
-            
-
-
+    $('.but_Playlist').click(function(){
+        $('.job_menu').show();
     });
+
+
+
 
 });
 

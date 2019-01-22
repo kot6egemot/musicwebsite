@@ -28,7 +28,7 @@ class List_track(models.Model):
 
 class Playlist(models.Model):
     owner = models.ForeignKey(User, on_delete=True)
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=15)
     pl_and_lt = models.ManyToManyField(List_track)
     class Meta:
         verbose_name_plural = 'Плейлисты'

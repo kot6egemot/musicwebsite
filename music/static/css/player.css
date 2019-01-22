@@ -156,6 +156,8 @@
 }
 
 
+
+/* СТРОЧКИ ПЕСЕН ПЛЕЙЛИСТА ПЛЕЕРА */
 .track{    
     width: 320px; 
 }
@@ -165,6 +167,8 @@
 }
 
 .track_rows{
+    box-sizing: border-box;
+
     padding: 0 5px 0 5px;
     display: flex;
     justify-content: space-between;
@@ -200,7 +204,7 @@
   scrollbar-width: thin;
 }
 
-.count, .name_song, .time, .add_track {
+.count, .time, .add_track {
         /**
          * Для эксплорера
          */
@@ -223,22 +227,34 @@
 }
 
 .artist-name{
-    width: 190px;
+    box-sizing: border-box;
+    padding:3px;
+    width: 260px;
+    height: 50px;
 }
 
 .artist{
     font-size :18px;
+    height: 25px;
 }
 
 .name_track{
     font-size: 12px;
-
+    height: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .artist, .name_track{
-    padding-left: 20px;
+    padding-left: 10px;
 }
 
 .go_on{
     background-image: url('images/butPause.png');
+}
+
+#select_add_song{
+    position: absolute;
+    float: top;
 }
