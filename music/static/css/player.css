@@ -1,9 +1,9 @@
 
 .player{
+    margin: 20px 0 50px 50px;
     display: flex;        /* Определяет flex-контейнер */
     flex-direction: column;/* устанавливаем основную ось(вертикально) */
     justify-content: space-around;
-
     padding: 5px;
     width: 330px;
     height: 440px;
@@ -35,7 +35,7 @@
     height: 70px;
     display: flex;
     flex-direction: column;
-    align-items:center ;
+    align-items: flex-end;
 }
 
 .name_album{
@@ -73,6 +73,12 @@
     color: white;
 }
 
+.time{
+    font-size: 11px;
+    padding: 2px;
+}
+
+/*Полоса прогресса*/
 .div_timeline{
     margin-top: -10px;
     z-index: 5;
@@ -89,6 +95,7 @@
     height:5px;
 
 }
+
 .div_timeline input::-webkit-slider-thumb{
     -webkit-appearance: none;
     width:18px;
@@ -114,10 +121,41 @@
     transition:.1s;
 }
 
+
+/*Конец стилизации полоски прогресса*/
+#line_volume{
+    -webkit-appearance: none;
+    position: absolute;
+    outline: none;
+    height: 75px;
+    left: 7px;
+    bottom: 33px;
+}
+
+
+
+#line_volume::-moz-range-thumb{
+    width:9px;
+    height:9px;
+    background:#4d9993;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.1s;
+}
+
+#line_volume:-moz-range-track{
+    color: #4d9993;}
+
+
+
+
+
+
 .button_mut{
     width: 34px;
     height: 34px;
     background-image:url('images/bunmuteActive.png');
+    position: relative;
 }
 
  .back{
@@ -180,6 +218,8 @@
     border-style: solid;
     border-width: 1px 0 0 0;
     border-color:#625e68;
+
+    z-index: 50;
 }
 
 .count{
@@ -204,7 +244,7 @@
   scrollbar-width: thin;
 }
 
-.count, .time, .add_track {
+.count, .time, .add_track, .artist, .name_track  {
         /**
          * Для эксплорера
          */
@@ -254,7 +294,3 @@
     background-image: url('images/butPause.png');
 }
 
-#select_add_song{
-    position: absolute;
-    float: top;
-}

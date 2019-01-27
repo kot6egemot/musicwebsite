@@ -4,7 +4,6 @@ $(document).ready(function() {
 $('.name_song').text($('.name_track:first').text())
 $('.name_album').text($('.name_track:first').attr('artist'))
 
-
 function get_and_set_name_song(){
     var name_song = $('.on').text();
     var name_artist = $('.on').attr('artist');
@@ -12,6 +11,14 @@ function get_and_set_name_song(){
     $('.name_album').text(name_artist);
 }//при запуске плеера, ставляем данные в шапку плеера
 
+function count_track(){
+        var s = $('.count');
+        for(var i = 0; i != s.length; i++){
+            $(s[i]).text(i+1);
+
+        }
+    };
+count_track()
 //следующий трек - предыдущий трек
 function next(){
     var a = $('.tracklist').find('.name_track');
@@ -23,6 +30,9 @@ function next(){
         };
     };//end for
 };
+
+
+
 function back(){ 
     //получаем массив элеметов c селектором .button
     var a = $('.tracklist').find('.name_track');
@@ -49,7 +59,6 @@ function timeformat(input_int){
     var pl = $('#my-player').get(0); //плеер
 
     $('.name_track').on("click", function(event) {
-
         //Все управление плеером производится по нажатию на блок с классом name_track
         //кнопки которые затрагивают паузу и стоп ссылаются на этот блок
         //содержащиеся в атрибутах блока данные передаются в плеер
@@ -86,6 +95,7 @@ function timeformat(input_int){
 
     //реализация кнопки mute
     jQuery(".button_mut").on("click", function(event){
+
         if ($(this).hasClass('muton')) {
             document.getElementById("my-player").muted = false;
             $(this).removeClass('muton');
@@ -147,10 +157,12 @@ function timeformat(input_int){
     });
     //////////////////////////////////////////
     //настройка громкости звука
-    $('#volume').val(100);
-    $('#volume').bind('change', function(){
+    var volume = $('#line_volume')
+    volume.val(100);
+    volume.bind('change', function(){
         pl.volume = ($(this).val()/100);
     });
+
     //центральная кнопка имитирует нажатие на песню в плейлисте
     $('.button').click(function(){
         if(pl.paused){

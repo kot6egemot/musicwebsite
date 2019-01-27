@@ -12,25 +12,26 @@
         </div>
 
         <div class="player_button_control">
-            <div class="button_mut"></div>  
+            <div class="button_mut">
+                  <input id="line_volume" type="range" orient='vertical' min="0" max="100"/>
+            </div>  
             <div class="back"></div>
             <div class="button" data-src = ""></div>
             <div class="next"></div>
-            <div class="but_Playlist">
+            <div class="but_Playlist" id='job_menu'>
 
 
                 <div class="job_menu">
                     <ul class="top_menu">
-                        <li onclick="$('.create_playlist').show();">
+                        <li id='job_menu' onclick="$('.create_playlist').show();">
                             Add
-
                         </li>
-                        <li>Open
+                        <li id='job_menu'>Open
                                 <ul class="sub_menu">
                                     {% for pl in user_playlist%}
-                                    <li><a href='?pl={{pl}}'>{{pl}}</a>
+                                    <li><a id='job_menu' href='?pl={{pl}}#'>{{pl}}</a>
                                         <ul class= 'sub_menu_two'>
-                                            <li><div class="button_del_pl" pl={{pl.id}}></div></li>
+                                            <li><div id='job_menu' class="button_del_pl" pl={{pl.id}}></div></li>
                                         </ul>
                                     </li>
                                     {% endfor %}
@@ -38,8 +39,6 @@
                         </li>
                     </ul>
                 </div>
-
-
 
             </div>
         </div>
@@ -59,12 +58,12 @@
         <div class="track">
             {% for song in songs_pl %}
             <div class="track_rows">
-                <div class="count">1</div>
+                <div class="count"></div>
                 <div class='artist-name'>
                     <div class="artist">Linkinpark</div>
                     <div class="name_track" data-src = "/{{song.path}}", artist='{{song.artist}}'>{{song.title}}</div>
                 </div>
-                <div class="time">1</div>
+                <div class="time">0:00</div>
                 <div class="del_track" id_track = '{{song.id}}'>DT</div>
             </div>
             {% endfor %}  
@@ -73,8 +72,8 @@
 </div>
 
 
-<div class="create_playlist">
-    <form class ='form_create_playlist' action="" method="post">    
+<div class="create_playlist" id='job_menu'>
+    <form  class ='form_create_playlist' action="" method="post">    
         {% csrf_token %}
         {{form}}
     </form>

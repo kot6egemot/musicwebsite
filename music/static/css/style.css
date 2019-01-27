@@ -58,6 +58,7 @@
 	display: flex;
 	justify-content: flex-start;
 	flex-wrap: wrap;
+	background: #3f413a;
 }
 
 .topnav a{
@@ -161,4 +162,9 @@
 
 .select_select{
 	display: none;
+
+}
+
+#select_add_song{
+    position: absolute;
 }

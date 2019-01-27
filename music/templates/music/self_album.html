@@ -14,7 +14,11 @@
         </div>
 
         <div class="player_button_control">
-            <div class="button_mut"></div>  
+            <div class="button_mut">
+
+                    <input id="line_volume" type="range" orient='vertical' min="0" max="100"/>
+      
+            </div>  
             <div class="back"></div>
             <div class="button" data-src = ""></div>
             <div class="next"></div>
@@ -37,12 +41,12 @@
         <div class="track">
             {% for track in tracks %}
             <div class="track_rows">
-                <div class="count">1</div>
+                <div class="count"></div>
                 <div class='artist-name'>
                     <div class="artist">Linkinpark</div>
                     <div class="name_track" data-src = "/{{track.path}}", aritst='track.artist'>{{track.title}}</div>
                 </div>
-                <div class="time">1</div>
+                <div class="time">0:00</div>
                 <div class="add_track" id_track = '{{track.id}}'>AT</div>
             </div>  
             {% endfor %}

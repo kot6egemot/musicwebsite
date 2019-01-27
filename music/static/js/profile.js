@@ -1,6 +1,11 @@
 $(document).ready(function() {
 
 ///////ЗАПОЛНЕНИЕ И ОТПРАВКА ФОРМЫ ВНЕСЕНИЯ ПЕСНИ В СПИСОК ПЕСЕН\\\\\\\\\
+/*
+    $('.track_rows').click(function(){
+        $(this).find('.name_track').trigger('click');
+        return;
+    });*/
 
     $('.add_track').click(function(event){  
         var select = $('.select_select')
@@ -30,10 +35,13 @@ $(document).ready(function() {
 
     //скрытие элемента по клику в не области кнопки добавить_песню
     $(document).click(function(event) {
+        var menu = $('.job_menu')
+        if($(event.target).attr('id') != 'job_menu'){
+            menu.hide('slow');
+        };
         if ($(event.target).closest(".add_track").length) return;
-        $(".select_select").hide("slow");
+        $(".select_select").hide("slow");   
             event.stopPropagation();
-
     });
 
   //УДАЛЯЕМ ПЕСНЮ ИЗ СПИСКА\\\\\\\\\\\\\\\\\\\\
@@ -50,7 +58,7 @@ $(document).ready(function() {
 
     });
 ///////////////////////////////////////////////////////
-
+    
 
     $('#button_create_pl').click(function(){
         var form_create_data = $('.form_create_playlist').serialize();
@@ -61,7 +69,8 @@ $(document).ready(function() {
                 //Включать новый плейлист в список
                 $('.create_playlist').hide();
                 if(status == 'success'){
-                    var elem_li = ('<li>n_pl<li>').appendTo('.sub_menu');
+                    var elem_li = ('<li>n_pl<li>');
+                    elem_li.appendTo('.sub_menu');
                 }
             }); 
         };
@@ -79,13 +88,9 @@ $(document).ready(function() {
     });
 
 
-
     $('.but_Playlist').click(function(){
         $('.job_menu').show();
     });
-
-
-
 
 });
 
