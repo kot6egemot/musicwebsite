@@ -1,11 +1,8 @@
 $(document).ready(function() {
 
 ///////ЗАПОЛНЕНИЕ И ОТПРАВКА ФОРМЫ ВНЕСЕНИЯ ПЕСНИ В СПИСОК ПЕСЕН\\\\\\\\\
-/*
-    $('.track_rows').click(function(){
-        $(this).find('.name_track').trigger('click');
-        return;
-    });*/
+
+
 
     $('.add_track').click(function(event){  
         var select = $('.select_select')

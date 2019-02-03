@@ -19,6 +19,7 @@
 
 
 .tracklist{
+    box-sizing: border-box;
     display: flex;
     flex-direction: column; 
     align-items: center; 
@@ -125,13 +126,24 @@
 /*Конец стилизации полоски прогресса*/
 #line_volume{
     -webkit-appearance: none;
+    -webkit-appearance: slider-vertical;
+    position: absolute;
+    outline: none; 
+    height: 75px;
+    left: -46px;
+    bottom: 33px;
+}
+
+
+@-moz-document url-prefix(){
+    #line_volume{
+    -webkit-appearance: none;
     position: absolute;
     outline: none;
     height: 75px;
     left: 7px;
     bottom: 33px;
 }
-
 
 
 #line_volume::-moz-range-thumb{
@@ -145,11 +157,15 @@
 
 #line_volume:-moz-range-track{
     color: #4d9993;}
+ 
+
+}
 
 
-
-
-
+.arrow{
+    height: 21px;
+    width: 23px;
+}
 
 .button_mut{
     width: 34px;
@@ -205,8 +221,6 @@
 }
 
 .track_rows{
-    box-sizing: border-box;
-
     padding: 0 5px 0 5px;
     display: flex;
     justify-content: space-between;
@@ -220,9 +234,6 @@
     border-color:#625e68;
 
     z-index: 50;
-}
-
-.count{
 }
 
 .tracklist::-webkit-scrollbar{

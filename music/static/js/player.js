@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
 
+
 $('.name_song').text($('.name_track:first').text())
 $('.name_album').text($('.name_track:first').attr('artist'))
 
@@ -83,19 +84,36 @@ function timeformat(input_int){
         } else {
             $('.name_track').removeClass('on');
             $('.name_track').removeClass('pause');
+
+            $('.name_track').parent().parent().css('background','');
+            $('.name_track').parent().siblings('.arrow').css("background-image","url('')")
+            $('.name_track').parent().parent().css('color','white');
+
             $(this).addClass('on');
 
             $('.button').addClass('go_on');
 
             pl.src = $(this).attr('data-src');
             pl.play();    
-            get_and_set_name_song();  
+            get_and_set_name_song();
+
+
+            $(this).parent().parent().css('background','#605c66');
+            $(this).parent().parent().css('color','#d2c293');
+            $(this).parent().siblings('.arrow').css("background-image","url('/static/css/images/Strelka.png')")
+
         }
+
+        event.stopPropagation()
+        
+    });
+
+    $('.track_rows').click(function(){
+        $(this).find('.name_track').trigger('click');
     });
 
     //реализация кнопки mute
     jQuery(".button_mut").on("click", function(event){
-
         if ($(this).hasClass('muton')) {
             document.getElementById("my-player").muted = false;
             $(this).removeClass('muton');
@@ -134,6 +152,7 @@ function timeformat(input_int){
     $("#timeline").bind("change", function() {
             pl.currentTime = $(this).val();
             $("#timeline").attr("max", Math.floor(pl.duration)); //-1 из-за числа с плавующей точкой - посмотреть!
+
         });
 
     //Наведение на песню подсветка цветом
