@@ -6,7 +6,7 @@
 
 <div class="player">
     <div class="control">
-        <audio id="my-player" loop ></audio>
+        <audio id="my-player" preload="auto"></audio>
 
         <div class = "player_title">
             <div class="name_album">Linkinpark</div>
@@ -41,6 +41,7 @@
         <div class="track">
             {% for track in tracks %}
             <div class="track_rows">
+                <div class="arrow"></div>
                 <div class="count"></div>
                 <div class='artist-name'>
                     <div class="artist">Linkinpark</div>

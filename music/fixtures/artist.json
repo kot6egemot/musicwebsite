@@ -1,0 +1,1 @@
+[{"pk": 1, "model": "music.artist", "fields": {"title": "Linkin_park"}}, {"pk": 2, "model": "music.artist", "fields": {"title": "Limp Bizkit"}}]
