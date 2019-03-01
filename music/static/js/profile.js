@@ -14,18 +14,21 @@ $(document).ready(function() {
         //Заполнения имя песни
         var data_id_track = $(this).attr('id_track')
         $('#id_id_track_model').val(data_id_track);
+        event.stopPropagation();
     });
 
 
 
     //копируем выбор в форму и отправляем-------
-    $('option').click(function(){
+    $('select').on('click', function(){
          //ajax запросы, отправка формы без березагрузки страницы.
         $('#id_title').val($(this).val());
         var formData = $('form').serialize();
         $.post('', formData, function(){
             $('.select_select').hide('slow');
         }); 
+
+        
     });
 
 ////////////////////////////////////////////////////////////////////
@@ -42,7 +45,7 @@ $(document).ready(function() {
     });
 
   //УДАЛЯЕМ ПЕСНЮ ИЗ СПИСКА\\\\\\\\\\\\\\\\\\\\
-    $('.del_track').click(function(){
+    $('.del_track').click(function(event){
         $('#id_id_track').val($(this).attr('id_track'));
         active_pl = $("div[active_pl]").attr('active_pl');
         $('.del #id_title').val(active_pl);
@@ -52,6 +55,8 @@ $(document).ready(function() {
             //Продумать действия после удаления песни
             //Поразмышлять об собтиях в очереди
         }); 
+
+        event.stopPropagation();
 
     });
 ///////////////////////////////////////////////////////

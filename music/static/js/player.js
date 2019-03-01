@@ -54,6 +54,8 @@ function timeformat(input_int){
         };
         return (m + ':' + s);
 };
+
+
 ///////////////////////////////////////////////////////////////////
 
     //Стоп-пауза
@@ -103,24 +105,24 @@ function timeformat(input_int){
             $(this).parent().siblings('.arrow').css("background-image","url('/static/css/images/Strelka.png')")
 
         }
-
         event.stopPropagation()
-        
     });
+
 
     $('.track_rows').click(function(){
         $(this).find('.name_track').trigger('click');
     });
 
     //реализация кнопки mute
-    jQuery(".button_mut").on("click", function(event){
-        if ($(this).hasClass('muton')) {
+    $(".button_mut").on("click", function(event){
+/*        if ($(this).hasClass('muton')) {
             document.getElementById("my-player").muted = false;
             $(this).removeClass('muton');
         }else{
             $(this).addClass("muton");
             document.getElementById("my-player").muted = true;
-        };
+        };*/
+        
     });
     //обновление полоски прогресса
 
@@ -131,16 +133,21 @@ function timeformat(input_int){
 
     pl.addEventListener('timeupdate', function (event){
         curtime = parseInt(pl.currentTime, 10);
+
         if( $('#timeline').hasClass('stopUpdateTimeLine') == false ){
             polz.value = curtime;
+        }else{
+            
+            //main функцией timenormal
         };
-
-        $('.realtime').text(timeformat(curtime));//вывод времени написаной функцией timenormal
+        $('.realtime').text(timeformat(curtime));
             //если время определено->вывести
         if(isNaN(pl.duration)){
             $('.long').text('0');
         }else{
             $('.long').text(timeformat(pl.duration));
+            $('#timeline').attr('max', Math.floor(pl.duration) - 1);
+
         };
         if((Math.floor(pl.duration)) == curtime){
             next();
@@ -149,11 +156,9 @@ function timeformat(input_int){
 
     //Переключение момента с помощью ползунка
 
-    $("#timeline").bind("change", function() {
-            pl.currentTime = $(this).val();
-            $("#timeline").attr("max", Math.floor(pl.duration)); //-1 из-за числа с плавующей точкой - посмотреть!
-
-        });
+        $("#timeline").bind("change", function(event) {
+                pl.currentTime = $(this).val();
+            });
 
     //Наведение на песню подсветка цветом
     //next track
@@ -167,6 +172,7 @@ function timeformat(input_int){
     });
 
     //при зажатой клавише перестает обнавлятся timeline
+
     $('#timeline').on('mousedown', function(){
         $(this).addClass('stopUpdateTimeLine')
     });
@@ -174,13 +180,19 @@ function timeformat(input_int){
     $('#timeline').on('mouseup', function(){
         $(this).removeClass('stopUpdateTimeLine')
     });
+
     //////////////////////////////////////////
     //настройка громкости звука
     var volume = $('#line_volume')
     volume.val(100);
-    volume.bind('change', function(){
+    volume.bind('change', function(event){
         pl.volume = ($(this).val()/100);
+        event.stopPropagation();
     });
+
+    volume.on('click', function(event){
+        event.stopPropagation();
+    }); // no click volume_mute
 
     //центральная кнопка имитирует нажатие на песню в плейлисте
     $('.button').click(function(){

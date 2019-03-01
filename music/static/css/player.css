@@ -136,35 +136,37 @@
 
 
 @-moz-document url-prefix(){
-    #line_volume{
-    -webkit-appearance: none;
-    position: absolute;
-    outline: none;
-    height: 75px;
-    left: 7px;
-    bottom: 33px;
-}
+        #line_volume{
+        -webkit-appearance: none;
+        position: absolute;
+        outline: none;
+        height: 75px;
+        left: 7px;
+        bottom: 33px;
+    }
 
 
-#line_volume::-moz-range-thumb{
-    width:9px;
-    height:9px;
-    background:#4d9993;
-    border-radius:8px;
-    cursor:pointer;
-    transition:.1s;
-}
+    #line_volume::-moz-range-thumb{
+        width:9px;
+        height:9px;
+        background:#4d9993;
+        border-radius:8px;
+        cursor:pointer;
+        transition:.1s;
+    }
 
-#line_volume:-moz-range-track{
-    color: #4d9993;}
+    #line_volume:-moz-range-track{
+        color: #4d9993;
+    }
  
-
 }
+
+
 
 
 .arrow{
-    height: 21px;
-    width: 23px;
+    height: 23px;
+    width: 21px;
 }
 
 .button_mut{
@@ -280,7 +282,7 @@
 .artist-name{
     box-sizing: border-box;
     padding:3px;
-    width: 260px;
+    width: 239px;
     height: 50px;
 }
 
